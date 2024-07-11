@@ -1,24 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Checklist } from './checkList';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="p-10">
+      <Checklist
+        data={[
+          { id: 1, name: 'Lucy', role: 'Manager' },
+          { id: 2, name: 'Bob', role: 'Developer' },
+          { id: 1, name: 'Lucy', role: 'Manager' },
+          { id: 2, name: 'Bob', role: 'Developer' },
+          { id: 1, name: 'Lucy', role: 'Manager' },
+          { id: 2, name: 'Bob', role: 'Developer' },
+        ]}
+        id="id"
+        primary="name"
+        secondary="role"
+        // style is not defined as a prop in CheckList, but we are using props spreadin to add it.
+        style={{
+          width: '',
+          maxHeight: '300px',
+          overflowY: 'auto',
+          backgroundColor: '#FFF176',
+        }}
+      />
     </div>
   );
 }
